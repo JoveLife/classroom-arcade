@@ -329,18 +329,18 @@ const WorldCupGame: React.FC = () => {
 
   if (phase === 'setup') {
     return (
-      <div className="flex flex-col items-center justify-center h-full p-8 text-center animate-fade-in overflow-y-auto">
-        <div className="bg-slate-800/80 p-12 rounded-3xl border border-slate-700 shadow-2xl max-w-2xl w-full backdrop-blur-md">
-          <Trophy className="w-20 h-20 text-yellow-400 mx-auto mb-6 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]" />
-          <h2 className="text-4xl font-bold mb-4 text-white">이상형 월드컵</h2>
-          <p className="text-slate-400 mb-10 text-lg break-keep">
+      <div className="flex flex-col items-center h-full w-full p-4 md:p-8 overflow-y-auto custom-scrollbar">
+        <div className="my-auto bg-slate-800/80 p-6 md:p-12 rounded-3xl border border-slate-700 shadow-2xl max-w-2xl w-full backdrop-blur-md text-center">
+          <Trophy className="w-16 h-16 md:w-20 md:h-20 text-yellow-400 mx-auto mb-4 md:mb-6 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]" />
+          <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-white font-arcade">이상형 월드컵</h2>
+          <p className="text-slate-400 mb-8 md:mb-10 text-sm md:text-lg break-keep leading-relaxed">
             이미지들이 들어있는 폴더를 선택하세요.<br/>
             홀로그램 스타일로 대결이 진행됩니다.
           </p>
           
-          <div className="relative inline-block group">
-            <NeonButton size="lg" className="pl-12 pr-12 group-hover:bg-cyan-400 group-hover:text-slate-900 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.6)]">
-              <Upload className="w-6 h-6 inline-block mr-3 mb-1" />
+          <div className="relative inline-block group w-full md:w-auto">
+            <NeonButton size="lg" className="w-full md:w-auto pl-8 pr-8 md:pl-12 md:pr-12 group-hover:bg-cyan-400 group-hover:text-slate-900 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] flex items-center justify-center">
+              <Upload className="w-6 h-6 mr-3 mb-0.5" />
               폴더 선택하기
             </NeonButton>
             <input 
@@ -358,7 +358,7 @@ const WorldCupGame: React.FC = () => {
             />
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-700/50">
+          <div className="mt-6 md:mt-8 flex items-center justify-center gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-700/50">
              <label className="relative inline-flex items-center cursor-pointer group">
                 <input 
                   type="checkbox" 
@@ -367,11 +367,11 @@ const WorldCupGame: React.FC = () => {
                   className="sr-only peer" 
                 />
                 <div className="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-500 group-hover:ring-2 group-hover:ring-cyan-500/30"></div>
-                <span className="ms-3 text-md font-medium text-slate-300 group-hover:text-white transition-colors">이름 표시하기</span>
+                <span className="ms-3 text-sm md:text-md font-medium text-slate-300 group-hover:text-white transition-colors">이름 표시하기</span>
               </label>
           </div>
           
-          <p className="mt-6 text-sm text-slate-500 font-mono">* 최소 2장 이상의 이미지가 필요합니다.</p>
+          <p className="mt-4 md:mt-6 text-xs md:text-sm text-slate-500 font-mono break-keep">* 최소 2장 이상의 이미지가 필요합니다.</p>
         </div>
       </div>
     );
