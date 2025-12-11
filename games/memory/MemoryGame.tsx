@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Camera, Edit3, Image as ImageIcon, Trash2, Plus, Play, RefreshCw, Clock, Move, ArrowRightLeft, Eye, ArrowLeft } from 'lucide-react';
+import { Camera, Edit3, Image as ImageIcon, Trash2, Plus, Play, RefreshCw, Clock, Move, ArrowRightLeft, Eye, ArrowLeft, CheckCircle } from 'lucide-react';
 import NeonButton from '../../components/NeonButton';
 import { MemoryCard } from '../../types';
 
@@ -582,6 +582,12 @@ const MemoryGame: React.FC = () => {
             <div className="flex items-center gap-2">
                 <Move className="w-5 h-5 text-purple-400" />
                 <span className="text-white w-12 tabular-nums">{moves}</span>
+            </div>
+            {/* Added: Match Count Display to fix unused variable error */}
+            <div className="w-px bg-slate-700" />
+            <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-pink-400" />
+                <span className="text-white w-16 tabular-nums">{matchedCount} / {cards.length / 2}</span>
             </div>
         </div>
 
