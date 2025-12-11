@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Upload, Trophy, Clover, RefreshCw, X, Check, ZoomIn, RotateCw, ArrowRight } from 'lucide-react';
 import NeonButton from '../../components/NeonButton';

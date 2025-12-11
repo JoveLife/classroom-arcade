@@ -301,7 +301,7 @@ const MemoryGame: React.FC = () => {
             <p className="text-slate-400 mb-4 md:mb-6 text-sm text-center md:text-left break-keep">왼쪽과 오른쪽이 짝이 됩니다. 글자를 입력하거나 이미지를 선택하세요.</p>
 
             <div className="flex-1 overflow-y-auto pr-1 md:pr-2 space-y-4 mb-4 md:mb-6 custom-scrollbar">
-                {customPairs.map((pair, index) => (
+                {customPairs.map((pair) => (
                     <div key={pair.id} className="relative flex flex-col md:flex-row items-center gap-3 md:gap-4 bg-slate-800/50 p-4 pt-10 md:p-4 rounded-xl border border-slate-700 animate-fade-in-up">
                         
                         {/* Mobile Delete Button (Top Right) */}
@@ -419,7 +419,7 @@ const MemoryGame: React.FC = () => {
 
         <div className="flex-1 overflow-y-auto pr-2 mb-6 custom-scrollbar">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {customPairs.filter(p => p.left.content && p.right.content).map((pair, idx) => (
+                {customPairs.filter(p => p.left.content && p.right.content).map((pair) => (
                     <div key={pair.id} className="bg-slate-800/80 border border-slate-600 p-4 rounded-xl flex items-center justify-between relative overflow-hidden group hover:border-pink-500/50 transition-colors">
                         <div className="absolute top-0 left-0 w-1 h-full bg-pink-500/50" />
                         
