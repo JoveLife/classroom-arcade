@@ -447,7 +447,9 @@ const WorldCupGame: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-center h-full w-full py-2 md:py-8 px-2 md:px-4 relative overflow-hidden">
+    // Mobile Layout Fix: Allow scrolling (overflow-y-auto) to handle mobile browser toolbars obscuring content.
+    // 'overflow-x-hidden' prevents horizontal scroll during animations.
+    <div className="flex flex-col items-center h-full w-full py-2 md:py-8 px-2 md:px-4 relative overflow-y-auto overflow-x-hidden custom-scrollbar">
       <AnimationStyles />
 
       {/* --- Preview / Zoom Modal (Portal to body) --- */}
@@ -530,10 +532,10 @@ const WorldCupGame: React.FC = () => {
 
       {/* 
         Layout Container: 
-        - Mobile: flex-col (Top/Bottom) - gap-2
+        - Mobile: Added 'pb-24' to allow scrolling past bottom toolbar overlap.
         - Desktop: flex-row (Left/Right) - gap-20
       */}
-      <div className="flex-1 w-full max-w-7xl flex flex-col md:flex-row items-center justify-center gap-3 md:gap-20 perspective-[1200px] relative z-10 min-h-0">
+      <div className="flex-1 w-full max-w-7xl flex flex-col md:flex-row items-center justify-center gap-4 md:gap-20 perspective-[1200px] relative z-10 pb-24 md:pb-0 min-h-0">
         
         {/* Left Card Wrapper (Top on Mobile) */}
         <div className="relative flex-1 w-full md:w-auto flex justify-center items-end md:items-center">

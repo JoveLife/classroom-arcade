@@ -9,7 +9,9 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, onHomeClick, showHomeButton = true }) => {
   return (
-    <div className="h-screen flex flex-col bg-slate-900 text-white relative overflow-hidden selection:bg-cyan-500 selection:text-black">
+    // h-screen을 기본으로 하되, 모바일 브라우저의 주소창/툴바 영역을 고려한 h-[100dvh]를 적용하여
+    // 화면 하단이 잘리는 현상을 원천적으로 방지합니다.
+    <div className="h-screen h-[100dvh] flex flex-col bg-slate-900 text-white relative overflow-hidden selection:bg-cyan-500 selection:text-black">
       {/* Background Ambient Glow */}
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-purple-600/20 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-cyan-600/20 blur-[120px] rounded-full pointer-events-none" />
